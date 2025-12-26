@@ -66,6 +66,10 @@ int read_line(FILE* filePointer, char** string) {
 }
 
 int isAnagrams(char *string1, char *string2) {
+    if (string1 == NULL || string2 == NULL) {
+        return 0;
+    }
+
     if (strlen(string1) != strlen(string2)) {
         return 0;
     }

@@ -60,6 +60,8 @@ static error_t parseOpt(int key, char *arg, struct argp_state *state) {
 
 static struct argp argp = { options, parseOpt, args_doc, doc };
 
+
+
 int main(int argc, char *argv[]) {
     struct arguments arguments;
     arguments.species = 0;
@@ -80,16 +82,12 @@ int main(int argc, char *argv[]) {
     char* line = NULL;
 
     while ((code = read_line(filePointer, &line)) == 0) {
-        //printf("%s\n", line);
+        if (isAnagrams(arguments.args[0], line)) {
+            printf("%s\n", line);
+        }
         free(line);
     }
 
-    if (code == 3) {
-        printf("The END\n");
-    }
-
-    const int output = isAnagrams("dosmokiesunplug", "muksludgepoison");
-    printf("Output: %d", output);
-
     fclose(filePointer);
+    exit(0);
 }
