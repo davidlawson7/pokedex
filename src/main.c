@@ -88,5 +88,8 @@ int main(int argc, char *argv[]) {
         printf("The END\n");
     }
 
+    const int output = isAnagrams("dosmokiesunplug", "muksludgepoison");
+    printf("Output: %d", output);
+
     fclose(filePointer);
 }

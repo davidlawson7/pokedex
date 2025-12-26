@@ -3,7 +3,7 @@
 
 MunitResult excluded_false(const MunitParameter params[], void* fixture) {
     const int result = excluded('c');
-    munit_assert(result != 1);
+    munit_assert(result == 0);
     return MUNIT_OK;
 }
 
@@ -14,10 +14,46 @@ MunitResult excluded_true(const MunitParameter params[], void* fixture) {
     return MUNIT_OK;
 }
 
+MunitResult is_anagram_true(const MunitParameter params[], void* fixture) {
+    const int result = isAnagrams("dosmokiesunplug", "muksludgepoison");
+    munit_assert(result == 1);
+    return MUNIT_OK;
+}
+
+MunitResult is_anagram_false(const MunitParameter params[], void* fixture) {
+    const int result = isAnagrams("dosmokiesunpluf", "muksludgepoison");
+    munit_assert(result == 0);
+    return MUNIT_OK;
+}
+
 MunitTest tests[] = {
   {
-    "/anagram", /* name */
+    "/excluded", /* name */
     excluded_true, /* test */
+    NULL, /* setup */
+    NULL, /* tear_down */
+    MUNIT_TEST_OPTION_NONE, /* options */
+    NULL /* parameters */
+  },
+  {
+    "/excluded", /* name */
+    excluded_false, /* test */
+    NULL, /* setup */
+    NULL, /* tear_down */
+    MUNIT_TEST_OPTION_NONE, /* options */
+    NULL /* parameters */
+  },
+  {
+    "/anagram", /* name */
+    is_anagram_true, /* test */
+    NULL, /* setup */
+    NULL, /* tear_down */
+    MUNIT_TEST_OPTION_NONE, /* options */
+    NULL /* parameters */
+  },
+  {
+    "/anagram", /* name */
+    is_anagram_false, /* test */
     NULL, /* setup */
     NULL, /* tear_down */
     MUNIT_TEST_OPTION_NONE, /* options */
