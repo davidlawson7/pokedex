@@ -53,3 +53,5 @@ dkms.conf
 
 # Folders
 /bin/
+/build/
+

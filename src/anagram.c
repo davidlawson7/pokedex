@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 #define INITIAL_SIZE 128
 
 int excluded(char character) {
-    int ignoreList[] = {',', ' '};
+    int ignoreList[] = {',', ' ', '-'};
     int length = sizeof(ignoreList) / sizeof(ignoreList[0]);
     int i;
 
@@ -38,8 +40,8 @@ int read_line(FILE* filePointer, char** string) {
 
             buffer = tempBuffer;
         }
-        
-        char c = (char)character;
+
+        char c = (char)tolower(character);
         if (excluded(c)) {
             continue;
         }
@@ -63,20 +65,26 @@ int read_line(FILE* filePointer, char** string) {
     return 0;
 }
 
-int main() {
-    FILE *filePointer;
-    filePointer = fopen("pokemon", "r");
-    int code = 0;
-    char* line = NULL;
-
-    while ((code = read_line(filePointer, &line)) == 0) {
-        printf("%s", line);
-        free(line);
+int isAnagrams(char *string1, char *string2) {
+    if (strlen(string1) != strlen(string2)) {
+        return 0;
     }
 
-    if (code == 3) {
-        printf("The END");
+    int freq[26] = {0};
+    
+    for (int i = 0; string1[i] != '\0'; i++) {
+        freq[string1[i] - 'a']++;
     }
 
-    fclose(filePointer);
+    for (int i = 0; string2[i] != '\0'; i++) {
+        freq[string2[i] - 'a']--;
+    }
+
+    for (int i = 0; i < 26; i++) {
+        if (freq[i] != 0) {
+            return 0;
+        }
+    }
+
+    return 1;
 }

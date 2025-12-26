@@ -14,7 +14,7 @@ for dir in /home/david/projects/api-data/data/api/v2/pokemon/*/; do
     SPECIES_FILE="${SPECIES_DIR}${FOLDER}/index.json"
 
     if [ -f $SPECIES_FILE ]; then
-        G="$(jq -r '.genera[] | select(.language.name == "en").genus' "${SPECIES_FILE}")"
+        G="$(jq -r '.genera[] | select(.language.name == "en").genus' "${SPECIES_FILE}" | sed 'y/áéí/aei/')"
         #G="${G// /_}"
         NAME="${NAME},${G}"
     else

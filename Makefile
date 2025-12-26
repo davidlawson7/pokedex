@@ -1,20 +1,23 @@
-# Flags for compilation (adding warnings are always good)
-CFLAGS = -pedantic -Wall -std=gnu99 -g
+CC = gcc
 
-# Flags for linking
-# LDFLAGS = -I /local/courses/csse2310/include
-
-# Libraries to link with
-# LIBS = -L /local/courses/csse2310/lib -l csse2310a3
+CFLAGS = -pedantic -Wall -Werror -std=gnu99
 
 # The name of the source files
-SOURCES = anagram.c
+SOURCES = munit.h munit.c anagram.h anagram.c
 
-# The name of the executable
-EXE = anagram
+anagram:
+	$(CC) $(CFLAGS) ./src/anagram.c ./src/main.c -o ./build/anagram
+
+dir:
+	mkdir -p build/opts
+
+test: build_test
+	./build/test
+
+build_test: test/anagram_test.c 
+	$(CC) $(CFLAGS) ./support/test/unit/munit/munit.c ./src/anagram.c ./test/anagram_test.c  -o ./build/test
 
 default: all
 
 all:
-	#gcc -g $(CFLAGS) $(LDFLAGS) $(LIBS) $(SOURCES) -o $(EXE)
-	gcc -g $(CFLAGS) $(SOURCES) -o $(EXE)
+	$(CC) $(CFLAGS) $(SOURCES) -o $(EXE)
