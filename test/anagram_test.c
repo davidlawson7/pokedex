@@ -7,7 +7,6 @@ MunitResult excluded_false(const MunitParameter params[], void* fixture) {
     return MUNIT_OK;
 }
 
-
 MunitResult excluded_true(const MunitParameter params[], void* fixture) {
     const int result = excluded('-');
     munit_assert(result == 1);
@@ -40,6 +39,17 @@ MunitResult is_anagram_null1(const MunitParameter params[], void* fixture) {
 
 MunitResult is_anagram_null2(const MunitParameter params[], void* fixture) {
     const int result = isAnagrams(NULL, "muksludgepoison");
+    munit_assert(result == 0);
+    return MUNIT_OK;
+}
+
+MunitResult parse_line_valid_1(const MunitParameter params[], void* fixture) {
+    const input = "Bulbasaur, Seed, Grass, poison";
+    parse_input(
+    
+    const int result = 0;
+    
+
     munit_assert(result == 0);
     return MUNIT_OK;
 }

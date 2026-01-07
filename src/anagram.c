@@ -41,12 +41,7 @@ int read_line(FILE* filePointer, char** string) {
             buffer = tempBuffer;
         }
 
-        char c = (char)tolower(character);
-        if (excluded(c)) {
-            continue;
-        }
-
-        buffer[length++] = c;
+        buffer[length++] = (char)character;
     }
 
     if (character == EOF) {
@@ -62,6 +57,20 @@ int read_line(FILE* filePointer, char** string) {
         return 2;
     }
     *string = tempBuffer;
+    return 0;
+}
+
+int parse_line(char** line, int species, int types) {    
+    char* buffer = malloc(INITIAL_SIZE);
+    if (!buffer) {
+        return 1;
+    }
+
+    char c = (char)tolower(character);
+    if (excluded(c)) {
+        continue;
+    }
+
     return 0;
 }
 
