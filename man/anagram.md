@@ -1,4 +1,4 @@
-Pokemon Anagram Solver "2025" "General Commands Manual"
+pokegram 1 "General Commands Manual"
 =======================================================
 
 NAME

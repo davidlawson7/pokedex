@@ -17,6 +17,11 @@ test: build_test
 build_test: test/anagram_test.c 
 	$(CC) $(CFLAGS) ./support/test/unit/munit/munit.c ./src/anagram.c ./test/anagram_test.c  -o ./build/test
 
+.PHONY: man
+man: man/anagram.1
+man/anagram.1: man/anagram.md
+	md2man-roff $^ > $@
+
 default: all
 
 all:

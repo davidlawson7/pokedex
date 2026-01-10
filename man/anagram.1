@@ -1,0 +1,24 @@
+.TH pokegram 1 "General Commands Manual"
+.SH NAME
+.PP
+\fB\fCpokegram\fR \- Pokémon Anagram Solver.
+.SH SYNOPSIS
+.PP
+\fB\fCpokegram [OPTIONS] <anagram>\fR
+.PP
+\fB\fCpokegram [\-s | \-t] <anagram>\fR
+.SH DESCRIPTION
+.PP
+Pokémon Anagram Solver.
+.PP
+\fB\fCpokegram\fR is able to solve anagrams of different Pokémon names in combination
+with their type, species, and other traits. By default, \fB\fCpokegram\fR will only
+use a Pokémons name to check against. If additional traits are in the anagram,
+you can use the flags defined in this manual to include them in the check.
+.SH OPTIONS
+.TP
+\fB\fC\-s\fR, \fB\fC\-\-species\fR
+Tells \fB\fCpokegram\fR to include the Pokémons species.
+.TP
+\fB\fC\-t\fR, \fB\fC\-\-types\fR
+Tells \fB\fCpokegram\fR to include the Pokémons types.
