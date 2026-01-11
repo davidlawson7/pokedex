@@ -22,6 +22,13 @@ man: man/anagram.1
 man/anagram.1: man/anagram.md
 	md2man-roff $^ > $@
 
+# clean targets
+.PHONY: clean
+clean:
+	rm -f build/anagram
+	rm -f build/test
+	rm -f build/*.o
+
 default: all
 
 all:

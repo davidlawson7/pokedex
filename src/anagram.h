@@ -2,6 +2,13 @@
 #define ANAGRAM_H
 #include <stdio.h>
 
+struct arguments;
+
+typedef struct arguments {
+  char *args[1];
+  int species, types;
+} arguments;
+
 int excluded(char character);
 int read_line(FILE* filePointer, char** string);
 
@@ -43,6 +50,6 @@ int isAnagrams(char *string1, char *string2);
  * `bulbasaurseedgrasspoison`
  *
  */
-int parse_line(char** line, int species, int types);
+int parse_line(char** line, arguments* arguments);
 
 #endif

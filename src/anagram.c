@@ -47,7 +47,7 @@ int read_line(FILE* filePointer, char** string) {
             continue;
         }
 
-        buffer[length++] = (char)character;
+        buffer[length++] = (char)c;
     }
 
     if (character == EOF) {
@@ -63,6 +63,10 @@ int read_line(FILE* filePointer, char** string) {
         return 2;
     }
     *string = tempBuffer;
+    return 0;
+}
+
+int parse_line(char **line, arguments *arguments) {
     return 0;
 }
 

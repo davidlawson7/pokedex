@@ -4,17 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct Config {
-  int useSpecies;
-  int usePrimaryType;
-  int useSecondaryType;
-};
-
-struct arguments {
-  char *args[2];
-  int species, types;
-};
-
 const char *argp_program_version = "poke-anagram 1.0";
 const char *argp_program_bug_address = "<david.lawson.95@outlook.com>";
 
@@ -67,9 +56,9 @@ int main(int argc, char *argv[]) {
 
   argp_parse(&argp, argc, argv, 0, 0, &arguments);
 
-  printf("ARG1 = %s\nARG2 = %s\n"
+  printf("ARG1 = %s\n"
          "SPECIES = %s\nTYPES = %s\n",
-         arguments.args[0], arguments.args[1], arguments.species ? "yes" : "no",
+         arguments.args[0], arguments.species ? "yes" : "no",
          arguments.types ? "yes" : "no");
 
   FILE *filePointer;
@@ -78,7 +67,11 @@ int main(int argc, char *argv[]) {
   char *line = NULL;
 
   while ((code = read_line(filePointer, &line)) == 0) {
-    if (isAnagrams(arguments.args[0], line)) {
+    int parsedLineCode = 0;
+    char *parsedLine = NULL;
+    parsedLineCode = parse_line(&parsedLine, &arguments);
+ 
+    if (isAnagrams(arguments.args[0], parsedLine)) {
       printf("%s\n", line);
     }
     free(line);
