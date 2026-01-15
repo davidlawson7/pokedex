@@ -8,6 +8,9 @@ list them to stdout.
 - [About](#about)
 - [Examples](#examples)
 - [Usage](#usage)
+- [Testing](#testing)
+- [TODO](#todo)
+- [License](#license)
 
 ## Installation
 
@@ -47,3 +50,23 @@ $ anagram --help
 
   Report bugs to <david.lawson.95@outlook.com>.
 ```
+
+## Testing
+There are two types of tests. Unit and integration. Both are very simple,
+designed to help my sanity a little.
+
+```console
+$ make test
+```
+
+## TODO
+
+There remains a little to do in this repo.
+1. Refactor code to be cleaner.
+2. Finish the unit test suite.
+3. Write bash based integration test suit testing againsts valid cases.
+4. Work out install instructions and verify.
+
+## License
+
+MIT License
