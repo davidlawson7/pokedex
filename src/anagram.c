@@ -22,12 +22,13 @@ int excluded(char character) {
 int read_line(FILE* filePointer, char** string, arguments *arguments) {
     char* buffer = malloc(INITIAL_SIZE);
     if (!buffer) {
-        return 1;
+        return 0;
     }
 
     // Control variables
     int column = 0; // 0 = name, 1 = species, 2 = type1, 3 = type2
     int shouldSkip = 0; // 0 = dont skip, 1 = skip
+    int positionOfName = 0; // Position in buffer where name ends
 
     size_t size = INITIAL_SIZE;
     size_t length = 0;
@@ -40,7 +41,7 @@ int read_line(FILE* filePointer, char** string, arguments *arguments) {
 
             if (!tempBuffer) {
                 free(buffer);
-                return 2;
+                return 0;
             }
 
             buffer = tempBuffer;
@@ -54,6 +55,7 @@ int read_line(FILE* filePointer, char** string, arguments *arguments) {
                 
                 switch (column) {
                     case 1:
+                        positionOfName = length; 
                         shouldSkip = arguments->species == 0; 
                         break;
                     case 2:
@@ -77,7 +79,7 @@ int read_line(FILE* filePointer, char** string, arguments *arguments) {
 
     if (uChar == EOF) {
         free(buffer);
-        return 3;
+        return 0;
     }
 
     buffer[length] = '\0';
@@ -85,10 +87,10 @@ int read_line(FILE* filePointer, char** string, arguments *arguments) {
     char* tempBuffer = realloc(buffer, length + 1);
     if (!tempBuffer) {
         free(buffer);
-        return 2;
+        return 0;
     }
     *string = tempBuffer;
-    return 0;
+    return positionOfName;
 }
 
 int should_skip(int column, arguments *arguments) {

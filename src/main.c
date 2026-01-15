@@ -56,19 +56,17 @@ int main(int argc, char *argv[]) {
 
   argp_parse(&argp, argc, argv, 0, 0, &arguments);
 
-  printf("ARG1 = %s\n"
-         "SPECIES = %s\nTYPES = %s\n",
-         arguments.args[0], arguments.species ? "yes" : "no",
-         arguments.types ? "yes" : "no");
-
   FILE *filePointer;
   filePointer = fopen("data/pokemon", "r");
   int code = 0;
   char *line = NULL;
 
-  while ((code = read_line(filePointer, &line, &arguments)) == 0) {
+  while ((code = read_line(filePointer, &line, &arguments)) != 0) {
     if (isAnagrams(arguments.args[0], line)) {
-      printf("%s\n", line);
+      for (int i= 0; i < code; ++i) {
+        printf("%c", line[i]);
+      }
+      printf("%c\n", '\0');
     }
     free(line);
   }
