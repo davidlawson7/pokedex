@@ -1,4 +1,4 @@
-# pokegram
+# `pokegram` - Pokemon Anagram Solver
 
 A fun little program to solve anagrams of Pokemon. Specifically it'll see what
 Pokemon are could be an anagram for the provided single word text input, and
