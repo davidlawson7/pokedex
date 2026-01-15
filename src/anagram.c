@@ -19,17 +19,21 @@ int excluded(char character) {
     return 0;
 }
 
-int read_line(FILE* filePointer, char** string) {
+int read_line(FILE* filePointer, char** string, arguments *arguments) {
     char* buffer = malloc(INITIAL_SIZE);
     if (!buffer) {
         return 1;
     }
 
+    // Control variables
+    int column = 0; // 0 = name, 1 = species, 2 = type1, 3 = type2
+    int shouldSkip = 0; // 0 = dont skip, 1 = skip
+
     size_t size = INITIAL_SIZE;
     size_t length = 0;
-    int character;
+    int uChar;
 
-    while ((character = fgetc(filePointer)) != EOF && character != '\n') {
+    while ((uChar = fgetc(filePointer)) != EOF && uChar != '\n') {
         if (length + 1 >= size) {
             size *= 2;
             char* tempBuffer = realloc(buffer, size);
@@ -42,15 +46,36 @@ int read_line(FILE* filePointer, char** string) {
             buffer = tempBuffer;
         }
 
-        char c = (char)tolower(character);
-        if (excluded(c)) {
+        char character = (char)tolower(uChar);
+        if (excluded(character)) {
+            if (character == ',') {
+                // Time to move the reader along
+                ++column;
+                
+                switch (column) {
+                    case 1:
+                        shouldSkip = arguments->species == 0; 
+                        break;
+                    case 2:
+                    case 3:
+                        shouldSkip = arguments->types == 0;
+                        break;
+                    default:
+                        shouldSkip = 0;
+                }
+            }
+
             continue;
         }
 
-        buffer[length++] = (char)c;
+        if (shouldSkip) {
+            continue;
+        }    
+
+        buffer[length++] = character;
     }
 
-    if (character == EOF) {
+    if (uChar == EOF) {
         free(buffer);
         return 3;
     }
@@ -66,7 +91,7 @@ int read_line(FILE* filePointer, char** string) {
     return 0;
 }
 
-int parse_line(char **line, arguments *arguments) {
+int should_skip(int column, arguments *arguments) {
     return 0;
 }
 

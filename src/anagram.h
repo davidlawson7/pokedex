@@ -10,7 +10,7 @@ typedef struct arguments {
 } arguments;
 
 int excluded(char character);
-int read_line(FILE* filePointer, char** string);
+int read_line(FILE* filePointer, char** string, arguments *arguments);
 
 /*
  * Checks to see if `string1` and `string2` are anagrams of one another. Will

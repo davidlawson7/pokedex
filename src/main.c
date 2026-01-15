@@ -66,12 +66,8 @@ int main(int argc, char *argv[]) {
   int code = 0;
   char *line = NULL;
 
-  while ((code = read_line(filePointer, &line)) == 0) {
-    int parsedLineCode = 0;
-    char *parsedLine = NULL;
-    parsedLineCode = parse_line(&parsedLine, &arguments);
- 
-    if (isAnagrams(arguments.args[0], parsedLine)) {
+  while ((code = read_line(filePointer, &line, &arguments)) == 0) {
+    if (isAnagrams(arguments.args[0], line)) {
       printf("%s\n", line);
     }
     free(line);
