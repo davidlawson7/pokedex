@@ -7,6 +7,7 @@ list them to stdout.
 - [Installation](#installation)
 - [About](#about)
 - [Examples](#examples)
+- [Usage](#usage)
 
 ## Installation
 
@@ -22,11 +23,27 @@ apart of the "PokeDex".
 
 ## Examples
 
-```shell
+```console
 $ anagram -st dosmokiesunplug
 muk
 
 
 $ anagram dosmokiesunplug --types --species
 muk
+```
+
+## Usage
+
+```console
+$ anagram --help
+  Usage: anagram [OPTION...] WORD
+  Pokemon Anagram Solver -- Solve anagrams using pokemon name, species and type.
+
+    -s, --species              Includes the Pokemons species
+    -t, --type                 Includes the Pokemons type (both if exist)
+    -?, --help                 Give this help list
+        --usage                Give a short usage message
+    -V, --version              Print program version
+
+  Report bugs to <david.lawson.95@outlook.com>.
 ```
