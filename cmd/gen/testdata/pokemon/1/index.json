@@ -1,0 +1,54 @@
+{
+  "id": 1,
+  "name": "bulbasaur",
+  "height": 7,
+  "weight": 69,
+  "base_experience": 64,
+  "types": [
+    {"slot": 1, "type": {"name": "grass", "url": "https://pokeapi.co/api/v2/type/12/"}},
+    {"slot": 2, "type": {"name": "poison", "url": "https://pokeapi.co/api/v2/type/4/"}}
+  ],
+  "past_types": [],
+  "stats": [
+    {"base_stat": 45, "stat": {"name": "hp"}},
+    {"base_stat": 49, "stat": {"name": "attack"}},
+    {"base_stat": 49, "stat": {"name": "defense"}},
+    {"base_stat": 65, "stat": {"name": "special-attack"}},
+    {"base_stat": 65, "stat": {"name": "special-defense"}},
+    {"base_stat": 45, "stat": {"name": "speed"}}
+  ],
+  "abilities": [
+    {
+      "slot": 1,
+      "is_hidden": false,
+      "ability": {"name": "overgrow", "url": "https://pokeapi.co/api/v2/ability/65/"}
+    },
+    {
+      "slot": 3,
+      "is_hidden": true,
+      "ability": {"name": "chlorophyll", "url": "https://pokeapi.co/api/v2/ability/34/"}
+    }
+  ],
+  "moves": [
+    {
+      "move": {"name": "tackle", "url": "https://pokeapi.co/api/v2/move/33/"},
+      "version_group_details": [
+        {
+          "level_learned_at": 1,
+          "move_learn_method": {"name": "level-up"},
+          "version_group": {"name": "red-blue"}
+        }
+      ]
+    },
+    {
+      "move": {"name": "bite", "url": "https://pokeapi.co/api/v2/move/44/"},
+      "version_group_details": [
+        {
+          "level_learned_at": 15,
+          "move_learn_method": {"name": "level-up"},
+          "version_group": {"name": "red-blue"}
+        }
+      ]
+    }
+  ]
+}

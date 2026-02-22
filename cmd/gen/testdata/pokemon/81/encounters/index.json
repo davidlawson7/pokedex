@@ -1,0 +1,22 @@
+[
+  {
+    "location_area": {
+      "name": "kanto-route-10-north",
+      "url": "https://pokeapi.co/api/v2/location-area/325/"
+    },
+    "version_details": [
+      {
+        "encounter_details": [
+          {
+            "chance": 10,
+            "max_level": 20,
+            "min_level": 15,
+            "method": {"name": "walk"}
+          }
+        ],
+        "max_chance": 10,
+        "version": {"name": "red"}
+      }
+    ]
+  }
+]

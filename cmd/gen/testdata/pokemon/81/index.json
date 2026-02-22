@@ -1,0 +1,51 @@
+{
+  "id": 81,
+  "name": "magnemite",
+  "height": 3,
+  "weight": 60,
+  "base_experience": 65,
+  "types": [
+    {"slot": 1, "type": {"name": "electric", "url": "https://pokeapi.co/api/v2/type/13/"}},
+    {"slot": 2, "type": {"name": "steel", "url": "https://pokeapi.co/api/v2/type/9/"}}
+  ],
+  "past_types": [
+    {
+      "generation": {"name": "generation-i", "url": "https://pokeapi.co/api/v2/generation/1/"},
+      "types": [
+        {"slot": 1, "type": {"name": "electric", "url": "https://pokeapi.co/api/v2/type/13/"}}
+      ]
+    }
+  ],
+  "stats": [
+    {"base_stat": 25, "stat": {"name": "hp"}},
+    {"base_stat": 35, "stat": {"name": "attack"}},
+    {"base_stat": 70, "stat": {"name": "defense"}},
+    {"base_stat": 95, "stat": {"name": "special-attack"}},
+    {"base_stat": 55, "stat": {"name": "special-defense"}},
+    {"base_stat": 45, "stat": {"name": "speed"}}
+  ],
+  "abilities": [
+    {
+      "slot": 1,
+      "is_hidden": false,
+      "ability": {"name": "magnet-pull", "url": "https://pokeapi.co/api/v2/ability/42/"}
+    },
+    {
+      "slot": 2,
+      "is_hidden": false,
+      "ability": {"name": "sturdy", "url": "https://pokeapi.co/api/v2/ability/5/"}
+    }
+  ],
+  "moves": [
+    {
+      "move": {"name": "tackle", "url": "https://pokeapi.co/api/v2/move/33/"},
+      "version_group_details": [
+        {
+          "level_learned_at": 1,
+          "move_learn_method": {"name": "level-up"},
+          "version_group": {"name": "red-blue"}
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": 34,
+  "name": "chlorophyll",
+  "effect_entries": [
+    {
+      "language": {"name": "en"},
+      "short_effect": "Boosts the Pokémon's Speed stat in harsh sunlight."
+    }
+  ]
+}

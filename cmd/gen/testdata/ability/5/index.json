@@ -1,0 +1,10 @@
+{
+  "id": 5,
+  "name": "sturdy",
+  "effect_entries": [
+    {
+      "language": {"name": "en"},
+      "short_effect": "The Pokémon is unaffected by one-hit KO moves and deals more damage with them."
+    }
+  ]
+}

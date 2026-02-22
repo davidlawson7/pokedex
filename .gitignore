@@ -1,0 +1,4 @@
+_data/
+internal/data/gen/
+internal/data/*_gen.go
+pokedex.exe

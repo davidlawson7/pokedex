@@ -1,0 +1,10 @@
+{
+  "id": 42,
+  "name": "magnet-pull",
+  "effect_entries": [
+    {
+      "language": {"name": "en"},
+      "short_effect": "Prevents Steel-type Pokémon from fleeing or being switched out."
+    }
+  ]
+}

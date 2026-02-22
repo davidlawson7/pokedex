@@ -1,0 +1,49 @@
+{
+  "id": 6,
+  "name": "charizard",
+  "height": 17,
+  "weight": 905,
+  "base_experience": 240,
+  "types": [
+    {"slot": 1, "type": {"name": "fire", "url": "https://pokeapi.co/api/v2/type/10/"}},
+    {"slot": 2, "type": {"name": "flying", "url": "https://pokeapi.co/api/v2/type/3/"}}
+  ],
+  "past_types": [],
+  "stats": [
+    {"base_stat": 78, "stat": {"name": "hp"}},
+    {"base_stat": 84, "stat": {"name": "attack"}},
+    {"base_stat": 78, "stat": {"name": "defense"}},
+    {"base_stat": 109, "stat": {"name": "special-attack"}},
+    {"base_stat": 85, "stat": {"name": "special-defense"}},
+    {"base_stat": 100, "stat": {"name": "speed"}}
+  ],
+  "abilities": [
+    {
+      "slot": 1,
+      "is_hidden": false,
+      "ability": {"name": "blaze", "url": "https://pokeapi.co/api/v2/ability/66/"}
+    }
+  ],
+  "moves": [
+    {
+      "move": {"name": "tackle", "url": "https://pokeapi.co/api/v2/move/33/"},
+      "version_group_details": [
+        {
+          "level_learned_at": 1,
+          "move_learn_method": {"name": "level-up"},
+          "version_group": {"name": "red-blue"}
+        }
+      ]
+    },
+    {
+      "move": {"name": "bite", "url": "https://pokeapi.co/api/v2/move/44/"},
+      "version_group_details": [
+        {
+          "level_learned_at": 33,
+          "move_learn_method": {"name": "level-up"},
+          "version_group": {"name": "red-blue"}
+        }
+      ]
+    }
+  ]
+}

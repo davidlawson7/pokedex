@@ -1,0 +1,14 @@
+{
+  "id": 65,
+  "name": "overgrow",
+  "effect_entries": [
+    {
+      "language": {"name": "en"},
+      "short_effect": "Powers up Grass-type moves when the Pokémon's HP is low."
+    },
+    {
+      "language": {"name": "fr"},
+      "short_effect": "Renforce les capacités de type Plante quand les PV du Pokémon sont faibles."
+    }
+  ]
+}
